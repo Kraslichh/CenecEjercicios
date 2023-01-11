@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar ns="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <element name="cancion">
+            <attribute name="xsi:noNamespaceSchemaLocation">
+                <data type="anyURI"/>
+            </attribute>
+            <element name="titulo">
+                <text/>
+            </element>
+            <element name="autor">
+                <text/>
+            </element>
+            <element name="letra">
+                <oneOrMore>
+                    <element name="estrofa">
+                        <optional>
+                            <attribute name="tipo">
+                                <data type="NCName"/>
+                            </attribute>
+                        </optional>
+                        <oneOrMore>
+                            <element name="verso">
+                                <text/>
+                            </element>
+                        </oneOrMore>
+                    </element>
+                </oneOrMore>
+            </element>
+        </element>
+    </start>
+</grammar>
